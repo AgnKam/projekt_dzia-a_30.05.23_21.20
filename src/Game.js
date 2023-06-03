@@ -3,6 +3,7 @@ import useGame from './useGame';
 
 function Game() {
   const {
+    changeDifficulty,
     word,
     guesses,
     guessLetter,
@@ -18,10 +19,14 @@ function Game() {
     calculateWinRate,
   } = useGame();
 
+
   return (
     <div>
       <h1>Game Screen</h1>
       <img src={hangmanImg} alt="Hangman" />
+      <button onClick={() => changeDifficulty('easy')}>Easy</button>
+      <button onClick={() => changeDifficulty('medium')}>Medium</button>
+      <button onClick={() => changeDifficulty('hard')}>Hard</button>
       <p>
         Word to guess: 
         {gameOver ? word : word.split('').map((letter) => (guesses.includes(letter) ? letter : '_')).join(' ')}
@@ -37,7 +42,7 @@ function Game() {
         onChange={(e) => setCurrentGuess(e.target.value.toUpperCase())}
         maxLength={1}
       />
-      <button onClick={guessLetter}>Guess Letter</button>
+      <button onClick={guessLetter} disabled={gameOver}>Guess Letter</button>
       {gameOver && (win ? <p>You win!</p> : <p>You lose!</p>)}
       {gameOver && <button onClick={startNewGame}>Start New Game</button>}
     </div>

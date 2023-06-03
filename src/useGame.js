@@ -23,9 +23,15 @@ const useGame = () => {
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
 
+  const regex = /[ąćęłńóśźżĄĆĘŁŃÓŚŹŻa-zA-Z]/;
+
   useEffect(() => {
-    startNewGame();
-  }, []);
+    setWords(difficultyLevels[difficulty]);
+  }, [difficulty]);
+
+  useEffect(() => {
+    startNewGame();  // start a new game whenever the words change
+  }, [words]);
 
   const startNewGame = () => {
     const randomWord = words[Math.floor(Math.random() * words.length)];
@@ -51,12 +57,14 @@ const useGame = () => {
   };
 
   const guessLetter = () => {
-    if (word.includes(currentGuess) && !guesses.includes(currentGuess) && currentGuess !== '') {
+    if (word.includes(currentGuess) && !guesses.includes(currentGuess) && currentGuess !== '' && currentGuess.match(regex)) {
       setGuesses((oldGuesses) => [...oldGuesses, currentGuess]);
-    } else if (!word.includes(currentGuess) && !guesses.includes(currentGuess) && currentGuess !== '') {
+    } else if (!word.includes(currentGuess) && !guesses.includes(currentGuess) && currentGuess !== '' && currentGuess.match(regex)) {
       setRemainingGuesses((oldGuesses) => oldGuesses - 1);
       setGuesses((oldGuesses) => [...oldGuesses, currentGuess]);
-    } else{
+    } else if (!currentGuess.match(regex)) {
+      alert('Please enter a letter');
+    } else {
       alert('You already guessed that letter!');
     }
     setCurrentGuess('');
