@@ -9,6 +9,9 @@ const useGame = () => {
   };
   const [userWords, setUserWords] = useState({ easy: [], medium: [], hard: [] });
 
+  const [showTranslation, setShowTranslation] = useState(false);
+  const [translation, setTranslation] = useState('');
+
   const [language, setLanguage] = useState('english');
   const [difficulty, setDifficulty] = useState('easy');
   const [words, setWords] = useState(languages[language][difficulty]);
@@ -39,14 +42,18 @@ const useGame = () => {
 
   const startNewGame = () => {
     const allWords = [...words, ...userWords[difficulty]];
-    const randomWord = allWords[Math.floor(Math.random() * allWords.length)];
-    setWord(randomWord);
+    const randomIndex = Math.floor(Math.random() * allWords.length);
+    const randomWordObj = allWords[randomIndex];
+    setWord(randomWordObj.word);
+    setTranslation(randomWordObj.translation);
     setGuesses([]);
     setRemainingGuesses(6);
     setCurrentGuess('');
     setGameOver(false);
     setWin(false);
+    setShowTranslation(false);
   };
+  
 
   useEffect(() => {
     const combinedWords = [...languages[language][difficulty], ...userWords[difficulty]];
@@ -120,7 +127,10 @@ const useGame = () => {
     calculateWinRate,
     changeLanguage,
     changeDifficulty,
-    addUserWord
+    addUserWord,
+    showTranslation,
+    setShowTranslation,
+    translation
   };
 };
 

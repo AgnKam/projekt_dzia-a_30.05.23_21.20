@@ -20,6 +20,9 @@ function Game() {
     losses,
     calculateWinRate,
     addUserWord,
+    showTranslation,
+    setShowTranslation,
+    translation,
   } = useGame();
 
   const formik = useFormik({
@@ -44,6 +47,8 @@ function Game() {
       <button onClick={() => changeDifficulty('medium')}>Medium</button>
       <button onClick={() => changeDifficulty('hard')}>Hard</button>
       <br></br>
+      <button onClick={() => setShowTranslation(true)}>Show Translation</button>
+      {showTranslation && <p>Translation: {translation}</p>}
       <br></br>
       <button onClick={() => changeLanguage('english')}>Język Angielski</button>
       <button onClick={() => changeLanguage('polish')}>Język Polski</button>
@@ -65,6 +70,7 @@ function Game() {
       <button onClick={guessLetter} disabled={gameOver}>Guess Letter</button>
       {gameOver && (win ? <p>You win!</p> : <p>You lose!</p>)}
       {gameOver && <button onClick={startNewGame}>Start New Game</button>}
+      <br></br>
       <br></br>
       {/* Add word form */}
       <form onSubmit={formik.handleSubmit}>

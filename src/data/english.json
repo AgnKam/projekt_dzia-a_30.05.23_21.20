@@ -1,16 +1,39 @@
 {
     "easy": [
-        "APPLE", "ORANGE", "GRAPE", "PEAR", "BANANA", "PEACH", "MELON", "CHERRY", "LIME", "PLUM",
-        "LEMON", "KIWI", "DATE", "FIG", "OLIVE", "MANGO", "BERRY", "GUAVA", "APRICOT", "COCONUT"
+      { "word": "APPLE", "translation": "JABŁKO" },
+      { "word": "ORANGE", "translation": "POMARAŃCZA" },
+      { "word": "GRAPE", "translation": "WINOGRONO" },
+      { "word": "PEAR", "translation": "GRUSZKA" },
+      { "word": "BANANA", "translation": "BANAN" },
+      { "word": "PEACH", "translation": "BRZOSKWINIA" },
+      { "word": "MELON", "translation": "ARBUZ" },
+      { "word": "CHERRY", "translation": "WIŚNIA" },
+      { "word": "LIME", "translation": "LIMONKA" },
+      { "word": "PLUM", "translation": "SUSZONA ŚLIWKA" }
     ],
     "medium": [
-        "ELEPHANT", "GIRAFFE", "DOLPHIN", "ALLIGATOR", "ARMADILLO", "BUFFALO", "CHIMPANZEE", "DINOSAUR", 
-        "FLAMINGO", "HEDGEHOG", "JELLYFISH", "KANGAROO", "LEMUR", "NARWHAL", "OCTOPUS", "PLATYPUS",
-        "RHINOCEROS", "SQUIRREL", "TORTOISE", "ZEBRA"
+      { "word": "ELEPHANT", "translation": "SŁOŃ" },
+      { "word": "GIRAFFE", "translation": "ŻYRAFA" },
+      { "word": "DOLPHIN", "translation": "DELFIN" },
+      { "word": "ALLIGATOR", "translation": "ALIGATOR" },
+      { "word": "ARMADILLO", "translation": "ARMADYLLO" },
+      { "word": "BUFFALO", "translation": "BIZON" },
+      { "word": "CHIMPANZEE", "translation": "SCHIMPANZEE" },
+      { "word": "DINOSAUR", "translation": "DINOZAUR" },
+      { "word": "FLAMINGO", "translation": "FLAMING" },
+      { "word": "HEDGEHOG", "translation": "JEŻ" }
     ],
     "hard": [
-        "HIPPOPOTAMUS", "CHRYSANTHEMUM", "PSYCHEDELIC", "PNEUMONIA", "SZECHUAN", "QUARANTINE", "XYLOPHONE",
-        "JUXTAPOSITION", "VEXATIOUS", "SUBTERRANEAN", "UNCHARACTERISTICALLY", "PSYCHOTHERAPIST", "ZWIEBACK",
-        "QUINTESSENTIAL", "EXEMPLIFICATION", "UNSCRUPULOUS", "VIVACIOUSNESS", "WHIPPOORWILL", "XYLOGRAPHY", "ZOOPLANKTON"
+      { "word": "HIPPOPOTAMUS", "translation": "HIPPOPOTAM" },
+      { "word": "CHRYSANTHEMUM", "translation": "CHRYZANTEM" },
+      { "word": "PSYCHEDELIC", "translation": "PSYCHEDELICZNY" },
+      { "word": "PNEUMONIA", "translation": "ZAPALENIE PŁUC" },
+      { "word": "SZECHUAN", "translation": "SZECHUAN" },
+      { "word": "QUARANTINE", "translation": "KWARANTANNA" },
+      { "word": "XYLOPHONE", "translation": "KSYLOFON" },
+      { "word": "JUXTAPOSITION", "translation": "JUKSTAPYZYCJA" },
+      { "word": "VEXATIOUS", "translation": "UŻERLIWY" },
+      { "word": "SUBTERRANEAN", "translation": "PODZIEMNY" }
     ]
-}
+  }
+  
