@@ -1,0 +1,90 @@
+/* Stylizacja dla Game.js */
+
+body {
+    background-color: #474747; /* Ciemne tło */
+    color: #FFFFFF; /* Biały tekst */
+  }
+  
+  .game-container {
+    text-align: center;
+    margin: 50px auto;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8B0000; /* Czerwony kolor */
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #A30000; /* Czerwony kolor - po najechaniu myszą */
+  }
+  
+  button.active {
+    background-color: #FF4500 !important; /* Pomarańczowy kolor - dla aktywnego przycisku */
+  }
+  
+  input[type='text'] {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #8B0000; /* Czerwony kolor */
+    border-radius: 8px;
+    color: #FFFFFF;
+    background-color: #474747; /* Ciemne tło */
+  }
+  
+  img {
+    width: 300px; /* Zwiększ rozmiar obrazu wisielca */
+    height: 300px; /* Zwiększ rozmiar obrazu wisielca */
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  .game-over-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF4500; /* Pomarańczowy kolor */
+  }
+  
+  .you-lose {
+    color: #FF0000; /* Czerwony kolor */
+    font-size: 24px;
+    font-weight: bold;
+    animation: blood 2s infinite; /* Dodaj animację krwi */
+  }
+  
+  .you-win {
+    color: #00FF00; /* Zielony kolor */
+    font-size: 24px;
+    font-weight: bold;
+    animation: blood 2s infinite; /* Dodaj animację krwi */
+  }
+  
+  .translation {
+    font-size: 18px;
+    color: #FF4500; /* Pomarańczowy kolor */
+    margin-top: 10px;
+  }
+  
+  /* chyba krew ale bardziej to miganie */
+  
+  @keyframes blood {
+    0% {
+      opacity: 0; /* Początkowa przezroczystość */
+    }
+    50% {
+      opacity: 1; /* Przezroczystość na połowie trwania animacji */
+    }
+    100% {
+      opacity: 0; /* Końcowa przezroczystość */
+    }
+  }
+  

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useGame from './useGame';
 import { useFormik } from 'formik';
+import './Game.css'; // Dodajemy import pliku CSS
 
 function Game() {
   const {
@@ -39,17 +40,17 @@ function Game() {
 
 
   return (
-    <div>
+    <div className="game-container"> {/* Dodajemy klasę do kontenera */}
       <h1>Game Screen</h1>
       <img src={hangmanImg} alt="Hangman" />
-      <br></br>
+      <br />
       <button onClick={() => changeDifficulty('easy')}>Easy</button>
       <button onClick={() => changeDifficulty('medium')}>Medium</button>
       <button onClick={() => changeDifficulty('hard')}>Hard</button>
-      <br></br>
+      <br />
       <button onClick={() => setShowTranslation(true)}>Show Translation</button>
       {showTranslation && <p>Translation: {translation}</p>}
-      <br></br>
+      <br />
       <button onClick={() => changeLanguage('english')}>Język Angielski</button>
       <button onClick={() => changeLanguage('polish')}>Język Polski</button>
       <p>
@@ -67,11 +68,13 @@ function Game() {
         onChange={(e) => setCurrentGuess(e.target.value.toUpperCase())}
         maxLength={1}
       />
-      <button onClick={guessLetter} disabled={gameOver}>Guess Letter</button>
-      {gameOver && (win ? <p>You win!</p> : <p>You lose!</p>)}
+      <button onClick={guessLetter} disabled={gameOver}>
+        Guess Letter
+      </button>
+      {gameOver && (win ? <p className="you-win">You win!</p> : <p className="you-lose">You lose!</p>)}
       {gameOver && <button onClick={startNewGame}>Start New Game</button>}
-      <br></br>
-      <br></br>
+      <br />
+      <br />
       {/* Add word form */}
       <form onSubmit={formik.handleSubmit}>
         <input
