@@ -1,9 +1,13 @@
 .home-container {
     background-color: #333333;
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 50px;
     text-align: center;
   }
+
+ body {
+    background-color: #333333;
+ }
   
   .home-title {
     font-size: 36px;
