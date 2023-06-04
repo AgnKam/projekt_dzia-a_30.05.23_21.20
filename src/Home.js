@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
+import { playDarkSound, stopDarkSound } from './utils/soundEffects';
 
 function Home() {
   const navigate = useNavigate();
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
 
   const startGame = () => {
+    stopDarkSound(); // Wyłącz odtwarzanie muzyki dark.mp3
     navigate('/game');
+  };
+
+  useEffect(() => {
+    if (isMusicPlaying) {
+      playDarkSound(); // Odtwórz muzykę dark.mp3
+    } else {
+      stopDarkSound(); // Zatrzymaj odtwarzanie muzyki dark.mp3
+    }
+  }, [isMusicPlaying]);
+
+  const toggleMusic = () => {
+    setIsMusicPlaying(prevState => !prevState); // Odwróć stan odtwarzania muzyki
   };
 
   return (
@@ -21,6 +36,9 @@ function Home() {
           <h2>How to play:</h2>
           <p>Guess the letters to reveal the hidden word. Be careful, every wrong guess brings you closer to doom.</p>
         </div>
+        <button className="home-music-button" onClick={toggleMusic}>
+          <span role="img" aria-label="Music">🎵</span> {isMusicPlaying ? 'Stop Music' : 'Play Music'}
+        </button>
       </div>
     </div>
   );
