@@ -2,7 +2,13 @@ import { useState, useEffect } from 'react';
 import english from './data/english.json';
 import polish from './data/polish.json';
 import { playKeySound, playWinSound, playLoseSound } from './utils/soundEffects';
-
+import hangman0 from './images/hangman0.png';
+import hangman1 from './images/hangman1.png';
+import hangman2 from './images/hangman2.png';
+import hangman3 from './images/hangman3.png';
+import hangman4 from './images/hangman4.png';
+import hangman5 from './images/hangman5.png';
+import hangman6 from './images/hangman6.png';
 
 const useGame = () => {
   const languages = {
@@ -24,7 +30,9 @@ const useGame = () => {
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
 
-  const hangmanImg = `/images/hangman${6 - remainingGuesses}.png`;
+  const hangmanImages = [hangman0,hangman1, hangman2, hangman3, hangman4, hangman5, hangman6];
+  const hangmanImg = hangmanImages[6 - remainingGuesses];
+
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
 
