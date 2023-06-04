@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
-import easy from './data/easy.json';
-import medium from './data/medium.json';
-import hard from './data/hard.json';
+import english from './data/english.json';
+import polish from './data/polish.json';
 
 const useGame = () => {
-  const difficultyLevels = {
-    easy: easy,
-    medium: medium,
-    hard: hard,
+  const languages = {
+    english: english,
+    polish: polish,
   };
 
-  const [difficulty, setDifficulty] = useState('easy');  // new state variable
-  const [words, setWords] = useState(difficultyLevels[difficulty]);
+  const [language, setLanguage] = useState('english');
+  const [difficulty, setDifficulty] = useState('easy');
+  const [words, setWords] = useState(languages[language][difficulty]);
   const [word, setWord] = useState('');
   const [guesses, setGuesses] = useState([]);
   const [remainingGuesses, setRemainingGuesses] = useState(6);
@@ -26,8 +25,8 @@ const useGame = () => {
   const regex = /[ąćęłńóśźżĄĆĘŁŃÓŚŹŻa-zA-Z]/;
 
   useEffect(() => {
-    setWords(difficultyLevels[difficulty]);
-  }, [difficulty]);
+    setWords(languages[language][difficulty]);
+  }, [language, difficulty]);
 
   useEffect(() => {
     startNewGame();  // start a new game whenever the words change
@@ -44,8 +43,12 @@ const useGame = () => {
   };
 
   useEffect(() => {
-    setWords(difficultyLevels[difficulty]);
-  }, [difficulty]);
+    setWords(languages[language][difficulty]);
+  }, [language, difficulty]);
+
+  const changeLanguage = (newLanguage) => {
+    setLanguage(newLanguage);
+  };
 
   const changeDifficulty = (newDifficulty) => {
     setDifficulty(newDifficulty);
@@ -99,6 +102,7 @@ const useGame = () => {
     wins,
     losses,
     calculateWinRate,
+    changeLanguage,
     changeDifficulty,
   };
 };
