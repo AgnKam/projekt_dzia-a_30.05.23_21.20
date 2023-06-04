@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/projekt_froncik/static/css/main.1700a28a.css",
+    "main.css": "/projekt_froncik/static/css/main.8cfebf93.css",
     "main.js": "/projekt_froncik/static/js/main.11c198ec.js",
     "static/js/787.1236fd91.chunk.js": "/projekt_froncik/static/js/787.1236fd91.chunk.js",
     "static/media/dark.mp3": "/projekt_froncik/static/media/dark.ad4bff1260ebd117f927.mp3",
@@ -16,12 +16,12 @@
     "static/media/hangman1.png": "/projekt_froncik/static/media/hangman1.c2f5799aaa8c0ca00061.png",
     "static/media/hangman0.png": "/projekt_froncik/static/media/hangman0.48bc7a882cae2757639e.png",
     "index.html": "/projekt_froncik/index.html",
-    "main.1700a28a.css.map": "/projekt_froncik/static/css/main.1700a28a.css.map",
+    "main.8cfebf93.css.map": "/projekt_froncik/static/css/main.8cfebf93.css.map",
     "main.11c198ec.js.map": "/projekt_froncik/static/js/main.11c198ec.js.map",
     "787.1236fd91.chunk.js.map": "/projekt_froncik/static/js/787.1236fd91.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1700a28a.css",
+    "static/css/main.8cfebf93.css",
     "static/js/main.11c198ec.js"
   ]
 }
