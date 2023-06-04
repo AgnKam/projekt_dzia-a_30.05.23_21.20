@@ -51,8 +51,8 @@ function Game() {
       <button onClick={() => setShowTranslation(true)}>Show Translation</button>
       {showTranslation && <p>Translation: {translation}</p>}
       <br />
-      <button onClick={() => changeLanguage('english')}>Język Angielski</button>
-      <button onClick={() => changeLanguage('polish')}>Język Polski</button>
+      <button onClick={() => changeLanguage('english')}>English</button>
+      <button onClick={() => changeLanguage('polish')}>Polish</button>
       <p>
         Word to guess:
         {gameOver ? word : word.split('').map((letter) => (guesses.includes(letter) ? letter : '_')).join(' ')}
