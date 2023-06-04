@@ -9,7 +9,7 @@ function Home() {
 
   const startGame = () => {
     stopDarkSound(); // Wyłącz odtwarzanie muzyki dark.mp3
-    navigate('/game');
+    navigate('/projekt_froncik/game');
   };
 
   useEffect(() => {
