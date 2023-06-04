@@ -1,11 +1,16 @@
 import React from 'react';
-import AppRouter from './AppRouter';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Game from './Game';
 
 function App() {
   return (
-    <div className="App">
-      <AppRouter />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/projekt_froncik" element={<Home />} />
+        <Route path="/projekt_froncik/game" element={<Game />} />
+      </Routes>
+    </Router>
   );
 }
 
