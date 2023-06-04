@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import english from './data/english.json';
 import polish from './data/polish.json';
+import { playKeySound, playWinSound, playLoseSound } from './utils/soundEffects';
+
 
 const useGame = () => {
   const languages = {
@@ -77,6 +79,7 @@ const useGame = () => {
   const guessLetter = () => {
     if (word.includes(currentGuess) && !guesses.includes(currentGuess) && currentGuess !== '' && currentGuess.match(regex)) {
       setGuesses((oldGuesses) => [...oldGuesses, currentGuess]);
+      playKeySound(); // Dodaj wywołanie funkcji odtwarzającej dźwięk stukania klawiszy
     } else if (!word.includes(currentGuess) && !guesses.includes(currentGuess) && currentGuess !== '' && currentGuess.match(regex)) {
       setRemainingGuesses((oldGuesses) => oldGuesses - 1);
       setGuesses((oldGuesses) => [...oldGuesses, currentGuess]);
@@ -92,12 +95,14 @@ const useGame = () => {
     if (remainingGuesses === 0) {
       setGameOver(true);
       setLosses((oldLosses) => oldLosses + 1);
+      playLoseSound(); // Dodaj wywołanie funkcji odtwarzającej dźwięk przegranej
     }
 
     if (word.length > 0 && word.split('').every((letter) => guesses.includes(letter))) {
       setGameOver(true);
       setWin(true);
       setWins((oldWins) => oldWins + 1);
+      playWinSound(); // Dodaj wywołanie funkcji odtwarzającej dźwięk wygranej
     }
 
   }, [guesses, remainingGuesses]);
