@@ -7,6 +7,7 @@ const useGame = () => {
     english: english,
     polish: polish,
   };
+  const [userWords, setUserWords] = useState({ easy: [], medium: [], hard: [] });
 
   const [language, setLanguage] = useState('english');
   const [difficulty, setDifficulty] = useState('easy');
@@ -22,10 +23,14 @@ const useGame = () => {
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
 
+  const [wordsUpdated, setWordsUpdated] = useState(false);
+
+
   const regex = /[ąćęłńóśźżĄĆĘŁŃÓŚŹŻa-zA-Z]/;
 
   useEffect(() => {
     setWords(languages[language][difficulty]);
+    console.log('Current words:', languages[language][difficulty]);
   }, [language, difficulty]);
 
   useEffect(() => {
@@ -33,7 +38,8 @@ const useGame = () => {
   }, [words]);
 
   const startNewGame = () => {
-    const randomWord = words[Math.floor(Math.random() * words.length)];
+    const allWords = [...words, ...userWords[difficulty]];
+    const randomWord = allWords[Math.floor(Math.random() * allWords.length)];
     setWord(randomWord);
     setGuesses([]);
     setRemainingGuesses(6);
@@ -43,8 +49,10 @@ const useGame = () => {
   };
 
   useEffect(() => {
-    setWords(languages[language][difficulty]);
-  }, [language, difficulty]);
+    const combinedWords = [...languages[language][difficulty], ...userWords[difficulty]];
+    setWords(combinedWords);
+  }, [language, difficulty, userWords, wordsUpdated]);
+
 
   const changeLanguage = (newLanguage) => {
     setLanguage(newLanguage);
@@ -87,6 +95,14 @@ const useGame = () => {
 
   }, [guesses, remainingGuesses]);
 
+  const addUserWord = (newWord, difficultyLevel) => {
+    if (newWord && difficultyLevel) {
+      setUserWords((prevWords) => {
+        return { ...prevWords, [difficultyLevel]: [...prevWords[difficultyLevel], newWord.toUpperCase()] }
+      });
+      setWordsUpdated(prevState => !prevState);
+    }
+  };
 
   return {
     word,
@@ -104,6 +120,7 @@ const useGame = () => {
     calculateWinRate,
     changeLanguage,
     changeDifficulty,
+    addUserWord
   };
 };
 
