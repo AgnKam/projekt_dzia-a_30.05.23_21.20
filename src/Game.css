@@ -1,154 +1,338 @@
-.game-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #232323;
-  color: #ffffff;
-}
-
-.game-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  padding: 20px;
-  background-color: rgba(123, 123, 123, 0.8);
-  border: 2px solid #8b0000;
-  border-radius: 8px;
-}
-
-.hangman-container {
-  width: 50%;
-}
-
-.hangman-image {
-  width: 100%;
-  height: auto;
-}
-
-.game-details {
-  width: 45%;
-}
-
-.game-title {
-  font-size: 38px;
-  font-weight: bold;
-}
-
-.difficulty-buttons {
-  margin-bottom: 10px;
-}
-
-.translation-button {
-  margin-bottom: 10px;
-}
-
-.language-buttons {
-  margin-bottom: 10px;
-}
-
-.word-to-guess {
-  font-size: 18px;
-}
-
-.used-letters,
-.remaining-guesses,
-.win-rate,
-.wins,
-.losses {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.guess-input {
-  margin-bottom: 10px;
-}
-
-.guess-input input[type='text'] {
-  margin-right: 5px;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #8b0000;
-  border-radius: 8px;
-  color: #ffffff;
-  background-color: #474747;
-}
-
-.guess-input button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: #8b0000;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: #8b0000;
-  color: #ffffff;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-.game-result {
-  margin-top: 10px;
-}
-
-.you-win,
-.you-lose {
-  font-size: 24px;
-  font-weight: bold;
-  animation: blood 2s infinite;
-}
-
-.translation {
-  font-size: 18px;
-  color: #ff4500;
-  margin-top: 10px;
-}
-
-.add-word-form {
-  margin-top: 20px;
-}
-
-.add-word-form form {
-  display: flex;
-  align-items: center;
-}
-
-.add-word-form input[type='text'],
-.add-word-form select {
-  margin-right: 5px;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #8b0000;
-  border-radius: 8px;
-}
-
-.add-word-form button[type='submit'] {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: #8b0000;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-@keyframes blood {
-  0% {
-    opacity: 0;
+@media only screen and (min-width: 1001px) {
+  .game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #232323;
+    color: #ffffff;
   }
-  50% {
-    opacity: 1;
+  
+  .game-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    background-color: rgba(123, 123, 123, 0.8);
+    border: 2px solid #8b0000;
+    border-radius: 8px;
   }
-  100% {
-    opacity: 0;
+  
+  .hangman-container {
+    width: 50%;
+  }
+  
+  .hangman-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .game-details {
+    width: 45%;
+  }
+  
+  .game-title {
+    font-size: 38px;
+    font-weight: bold;
+  }
+  
+  .difficulty-buttons {
+    margin-bottom: 10px;
+  }
+  
+  .translation-button {
+    margin-bottom: 10px;
+  }
+  
+  .language-buttons {
+    margin-bottom: 10px;
+  }
+  
+  .word-to-guess {
+    font-size: 18px;
+  }
+  
+  .used-letters,
+  .remaining-guesses,
+  .win-rate,
+  .wins,
+  .losses {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .guess-input {
+    margin-bottom: 10px;
+  }
+  
+  .guess-input input[type='text'] {
+    margin-right: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #474747;
+  }
+  
+  .guess-input button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8b0000;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8b0000;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .game-result {
+    margin-top: 10px;
+  }
+  
+  .you-win,
+  .you-lose {
+    font-size: 24px;
+    font-weight: bold;
+    animation: blood 2s infinite;
+  }
+  
+  .translation {
+    font-size: 18px;
+    color: #ff4500;
+    margin-top: 10px;
+  }
+  
+  .add-word-form {
+    margin-top: 20px;
+  }
+  
+  .add-word-form form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .add-word-form input[type='text'],
+  .add-word-form select {
+    margin-right: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+  }
+  
+  .add-word-form button[type='submit'] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8b0000;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  @keyframes blood {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #232323;
+    color: #ffffff;
+  }
+
+  .game-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    background-color: rgba(123, 123, 123, 0.8);
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+  }
+
+  .hangman-container {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hangman-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .game-details {
+    width: 100%;
+  }
+
+  .game-title {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .difficulty-buttons,
+  .translation-button,
+  .language-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .difficulty-buttons button,
+  .translation-button button,
+  .language-buttons button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .word-to-guess {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .used-letters,
+  .remaining-guesses,
+  .win-rate,
+  .wins,
+  .losses {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .guess-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .guess-input input[type='text'] {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #474747;
+    flex: 1;
+  }
+
+  .guess-input button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8b0000;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8b0000;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .game-result {
+    margin-top: 10px;
+  }
+
+  .you-win,
+  .you-lose {
+    font-size: 24px;
+    font-weight: bold;
+    animation: blood 2s infinite;
+  }
+
+  .translation {
+    font-size: 18px;
+    color: #ff4500;
+    margin-top: 10px;
+  }
+
+  .add-word-form {
+    margin-top: 20px;
+  }
+
+  .add-word-form form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .add-word-form input[type='text'],
+  .add-word-form select {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #8b0000;
+    border-radius: 8px;
+  }
+
+  .add-word-form button[type='submit'] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8b0000;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+
+  @keyframes blood {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+
