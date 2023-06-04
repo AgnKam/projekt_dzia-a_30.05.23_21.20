@@ -4,6 +4,7 @@ import useGame from './useGame';
 function Game() {
   const {
     changeDifficulty,
+    changeLanguage,
     word,
     guesses,
     guessLetter,
@@ -24,9 +25,14 @@ function Game() {
     <div>
       <h1>Game Screen</h1>
       <img src={hangmanImg} alt="Hangman" />
+      <br></br>
       <button onClick={() => changeDifficulty('easy')}>Easy</button>
       <button onClick={() => changeDifficulty('medium')}>Medium</button>
       <button onClick={() => changeDifficulty('hard')}>Hard</button>
+      <br></br>
+      <br></br>
+      <button onClick={() => changeLanguage('english')}>Język Angielski</button>
+      <button onClick={() => changeLanguage('polish')}>Język Polski</button>
       <p>
         Word to guess: 
         {gameOver ? word : word.split('').map((letter) => (guesses.includes(letter) ? letter : '_')).join(' ')}
