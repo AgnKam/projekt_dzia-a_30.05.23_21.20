@@ -1,7 +1,7 @@
 import React from 'react';
 import useGame from './useGame';
 import { useFormik } from 'formik';
-import './Game.css';
+import './css/Game.css';
 
 function Game() {
   const {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Home.css';
+import './css/Home.css';
 import { playDarkSound, stopDarkSound } from './utils/soundEffects';
 
 function Home() {
