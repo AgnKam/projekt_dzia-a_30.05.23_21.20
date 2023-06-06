@@ -43,7 +43,7 @@ function Home() {
         <button className="home-music-button" onClick={toggleMusic}>
           <span role="img" aria-label="Music">🎵</span> {isMusicPlaying ? 'Stop Music' : 'Play Music'}
         </button>
-        <button className="home-thanks-button" onClick={navigateToThanks}>Thanks Page</button>
+        <button className="home-music-button" onClick={navigateToThanks}>💜 Thanks</button>
       </div>
     </div>
   );
