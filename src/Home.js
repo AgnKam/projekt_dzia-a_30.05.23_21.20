@@ -24,6 +24,10 @@ function Home() {
     setIsMusicPlaying(prevState => !prevState); // Odwróć stan odtwarzania muzyki
   };
 
+  const navigateToThanks = () => {
+    navigate('/projekt_froncik/thanks');
+  };
+
   return (
     <div className="home-container">
       <div className="home-content">
@@ -39,6 +43,7 @@ function Home() {
         <button className="home-music-button" onClick={toggleMusic}>
           <span role="img" aria-label="Music">🎵</span> {isMusicPlaying ? 'Stop Music' : 'Play Music'}
         </button>
+        <button className="home-thanks-button" onClick={navigateToThanks}>Thanks Page</button>
       </div>
     </div>
   );

@@ -1,0 +1,33 @@
+.thanks-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    color: #f00;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .thanks-title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: flicker 2s linear infinite;
+  }
+  
+  .thanks-content {
+    font-size: 1.5rem;
+    line-height: 2;
+    text-align: justify;
+    max-width: 800px;
+    margin-bottom: 2rem;
+  }
+  
+  @keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+  
