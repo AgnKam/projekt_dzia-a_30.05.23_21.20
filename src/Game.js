@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import useGame from './useGame';
 import { useFormik } from 'formik';
 import './css/Game.css';
@@ -37,6 +37,10 @@ function Game() {
       formik.resetForm();
     },
   });
+//dodany został handleGuessLetter z użyciem hooka useCallback, który obsługuje kliknięcie przycisku "Guess Letter"
+  const handleGuessLetter = useCallback(() => {
+    guessLetter();
+  }, [guessLetter]);
 
   return (
     <div className="game-container">
@@ -75,7 +79,7 @@ function Game() {
               onChange={(e) => setCurrentGuess(e.target.value.toUpperCase())}
               maxLength={1}
             />
-            <button onClick={guessLetter} disabled={gameOver}>
+            <button onClick={handleGuessLetter} disabled={gameOver}>
               Guess Letter
             </button>
           </div>
